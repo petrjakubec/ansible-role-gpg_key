@@ -42,6 +42,20 @@ PLAY RECAP *********************************************************************
 127.0.0.1                  : ok=2    changed=0    unreachable=0    failed=1   
 ```
 
+Import of gpg key into keyring 
+------------
+
+After key generating should be sufficient just 
+```
+gpg --import publickeyfile.pub
+```
+Now you have key in keyring a you can use it for encrypting messages or sign verifying.
+You should also copy key to your master machine in order to have an strong backup policy if slave dies. For this purpose can be used i.e. scp.
+
+Copy files from a remote server (slave) to your current local server (master)
+```
+scp -r user@host:/path/to/source-files/ /path/to/destination-folder
+```
 
 
 Dependencies
