@@ -10,12 +10,14 @@ Requirements
 
 None.
 
-Role Variables
+TODO: Role Variables
 --------------
-
-TODO 
+ 
 ```variables/main.yml``` - There wasn't any variables and I've tried to write expected yaml. Should be rechecked.
+
 Also file ```defaults/main.yml``` was slightly edited. Original in defaults/main.yml.backup
+- renamed value of variable gpg_key_gen_user_email to {{ gpg_email }}
+- insert new value to variable gpg_key_gen_passphrase: {{ passphrase }}
 
 I've tried to run it in VirtualBox by
 ```ansible-playbook playbook.yml -k -K -s```
