@@ -1,0 +1,12 @@
+---
+- hosts: all
+  vars:
+    - ansible_user: codereview
+    - gpg_key_user: Petr Jakubec
+    - gpg_email: petrjakube@gmail.com
+    - passphrase: hellisreal
+
+  
+# prejmenovat hodnotu promenne gpg_key_gen_user_email na {{ gpg_email }}
+# vlozit obsah promenne gpg_key_gen_passphrase: {{ passphrase }}
+
