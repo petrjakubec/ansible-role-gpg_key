@@ -13,7 +13,34 @@ None.
 Role Variables
 --------------
 
-TODO
+TODO 
+```variables/main.yml``` - There wasn't any variables and I've tried to write expected yaml. Should be rechecked.
+Also file ```defaults/main.yml``` was slightly edited. Original in defaults/main.yml.backup
+
+I've tried to run it in VirtualBox by
+```ansible-playbook playbook.yml -k -K -s```
+but I was getting an error:
+```
+PLAY [local] **************************************************************************
+
+TASK [Gathering Facts] ****************************************************************
+ok: [127.0.0.1]
+
+TASK [vkill.gpg_key : Install dependent packages.] ************************************
+skipping: [127.0.0.1] => (item=[]) 
+
+TASK [vkill.gpg_key : Install dependent packages.] ************************************
+ok: [127.0.0.1] => (item=[u'gnupg2'])
+
+TASK [vkill.gpg_key : Ensure .gnupg config directory exists with right permissions] ***
+fatal: [127.0.0.1]: FAILED! => {"msg": "The field 'become_user' has an invalid value, which includes an undefined variable. The error was: {{ ansible_user }}: 'ansible_user' is undefined\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {{ ansible_user }}: 'ansible_user' is undefined"}
+	to retry, use: --limit @/home/codereview/duplicity/vkill/vkill.gpg_key/playbook.retry
+
+PLAY RECAP ****************************************************************************
+127.0.0.1                  : ok=2    changed=0    unreachable=0    failed=1   
+```
+
+
 
 Dependencies
 ------------
